@@ -1,4 +1,17 @@
 import './App.css';
+import {UsersMap} from './components/UsersMap';
+
+export interface IUser {
+  name: string
+  age: string
+  id: string
+}
+
+export interface IUsers {
+  users: IUser[],
+}
+
+
 
 const users = [{
     name: "Alex",
@@ -29,14 +42,7 @@ const users = [{
 function App() {
 
   return (
-    <>
-      {users.map((user) => (
-        <div key={user.id}>
-          <p>{user.name}</p>
-          <p>{user.age}</p>
-        </div>
-      ))}
-    </>
+    <UsersMap users={users} />
   )
 }
 
